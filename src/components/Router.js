@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import App from '../App';
 import Pokemon from './pokemon';
 const Router = () => (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-evolve">
         <Switch>
             <Route path="/" component={App} exact/>
             <Route path="/pokemon/:id" component={Pokemon}/>
