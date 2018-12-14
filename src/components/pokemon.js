@@ -7,9 +7,9 @@ class Pokemon extends Component {
     }
     componentWillMount = () => {
         if(!this.props.location.state){
-            let searchFor = this.props.match.params.id;
+            let searchFor = this.props.match.params.id.toLowerCase();
             let pokemon = Pokedex.find(function(e){
-                return e.species === searchFor;
+                return e.species.toLocaleLowerCase() === searchFor;
             });
             this.setState({pokemon});
         }else{
@@ -48,7 +48,7 @@ class Pokemon extends Component {
                 <h2 className="text-center">Stats</h2>
                 <div className="row justify-content-center">
                     
-                    <div className="col-xs-12 col-sm-3">
+                    <div className="col-xs-10 col-sm-3">
                         HP: {pokemon.baseStats.hp}
                         <div className="progress">
                             <div className={handleStats(pokemon.baseStats.hp, 'hp')} style={{width: `${pokemon.baseStats.hp/225*100}%`}}></div>
