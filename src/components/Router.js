@@ -9,7 +9,7 @@ const Router = () => (
         <Switch>
             <Route path="/" component={App} exact/>
             <Route path="/pokemon/:id" component={Pokemon}/>
-            <Route component={CatchAll} />
+            <Route path="/*" component={CatchAll} />
         </Switch>
     </BrowserRouter> 
 );
