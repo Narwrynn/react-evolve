@@ -20,7 +20,6 @@ class Pokemon extends Component {
 
     render(){
         let pokemon = this.state.pokemon;
-        console.log(pokemon)
         return (
             <div className="container Pokemon">
                 <Header />
@@ -33,7 +32,7 @@ class Pokemon extends Component {
                     </div>
                 </div>
                 <h2 className="text-center">Info</h2>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center text-center">
                     <div className="col-xs-5 col-sm-3">
                         <h5>Type(s):</h5>
                         {Object.keys(pokemon.types).map(type =>{ return (<p key={type}> {pokemon.types[type]}</p>)})}
